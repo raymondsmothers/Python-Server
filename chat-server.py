@@ -4,18 +4,26 @@
 import threading
 import socket
 
+#parameters
+MAX_LIST_SIZE = 5
+
 #global variables
 client_list = []   #list of connected clients
 
 #functions
-#def handle_client(socket):
-    
-
-#def handle_thread():
-    
-
-def handle_input()        
-
+def handle_disconnect(client):
+	#check if the list is empty or the client exists
+	if((client is None) or (not client_list)):
+		return
+	
+	#send disconnect notification and
+	#remove from client_list and close connection
+	client.send(b'Disconnecting from server')
+	client_list.remove(client)
+	client.close()
+	
+#TODO: implement the following handle input function
+def handle_input():
 
 #create socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -32,9 +40,14 @@ server_socket.bind((server_ip, port))
 #listen for client connections
 server_socket.listen()
 
+#accept loop
 while True:
     #accept client and send indication to client
     (client, address) = server_socket.accept()
+	
+	#add client to the list of active clients
+	client_list.append(client)
+	
     print("Success!")
     
     #send client welcome message

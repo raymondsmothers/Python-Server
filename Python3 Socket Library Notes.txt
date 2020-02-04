@@ -16,7 +16,7 @@ socket.gethostname(null)
     
 socket.bind((host, port))
     Description: Binds an address (and possibly port) to a socket allowing it to listen() for new connections
-    Parameteres: A tuple consisting of a string of the host machine address and a string of the port number being used.
+    Parameter: A tuple consisting of a string of the host machine address and a string of the port number being used.
     Return: ???
     Example: 
         s.bind((host, port))        
@@ -40,4 +40,11 @@ socket.send()
     Parameter: 
     Return: ???
     Example: 
-        client.send(infomation)
+        client.send(information)
+		
+socket.recv()
+	Description:
+	Parameter:
+	Return:
+	Example:
+		client
