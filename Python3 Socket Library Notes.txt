@@ -1,0 +1,43 @@
+Python 3 Socket Library
+
+socket.socket(null)
+    Description: Creates new socket
+    Parameter: null
+    Returns: reference to the new socket
+    Example:
+        s = socket.socket()
+    
+socket.gethostname(null)
+    Description: Return the address of the current host machine
+    Parameter: null
+    Return: String containing the address of host machine
+    Example:
+        host = socket.gethostname()    
+    
+socket.bind((host, port))
+    Description: Binds an address (and possibly port) to a socket allowing it to listen() for new connections
+    Parameteres: A tuple consisting of a string of the host machine address and a string of the port number being used.
+    Return: ???
+    Example: 
+        s.bind((host, port))        
+        
+socket.listen(null)
+    Description: Converts socket to listening scket that can allow clients to connect to it
+    Parameter: null
+    Return: ???
+    Example:
+        s.listen()
+
+socket.accept()
+    Description: accepts a client trying to connect to the socket
+    Parameter: null
+    Return: Tuple consisting of a connection object that can be used to receive and transmit data and the address is the address that is bound at the other end of the socket.
+    Example: 
+        (client, address) = s.accept()
+        
+socket.send()
+    Description: 
+    Parameter: 
+    Return: ???
+    Example: 
+        client.send(infomation)
