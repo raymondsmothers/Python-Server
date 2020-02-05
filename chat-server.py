@@ -11,6 +11,10 @@ MAX_LIST_SIZE = 5
 client_list = []   #list of connected clients
 
 #functions
+def handle_input(mess, client):
+    print("Needs work")
+    return
+
 def handle_disconnect(client):
 	#check if the list is empty or the client exists
 	if((client is None) or (not client_list)):
@@ -21,9 +25,10 @@ def handle_disconnect(client):
 	client.send(b'Disconnecting from server')
 	client_list.remove(client)
 	client.close()
-	
+	return
+
 #TODO: implement the following handle input function
-def handle_input():
+#def handle_input():
 
 #create socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -46,7 +51,7 @@ while True:
     (client, address) = server_socket.accept()
 	
 	#add client to the list of active clients
-	client_list.append(client)
+    client_list.append(client)
 	
     print("Success!")
     
@@ -58,3 +63,4 @@ while True:
             
 #done
 print('terminating server...')
+
