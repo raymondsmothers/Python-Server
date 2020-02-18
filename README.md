@@ -1,6 +1,6 @@
 # Python-Server
 
-## Overview
+### Overview
 Simple python3 TCP Chatroom server and client. Users will be able to connect to the server with the appropriate client and be able to send and receive messages to and from other clients connect to the server.
 
 ### Server Protocol
