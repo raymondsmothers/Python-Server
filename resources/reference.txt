@@ -1,0 +1,8 @@
+Links for reference:
+
+Python socket library docs:
+https://docs.python.org/3/library/socket.html
+
+General tutorials:
+https://www.tutorialspoint.com/python/python_networking.htm
+https://www.geeksforgeeks.org/socket-programming-python/
