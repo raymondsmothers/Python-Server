@@ -4,6 +4,8 @@
 '''
 TCP Chatroom Server
 Author: Raymond Smothers
+
+Last Update: February 2020
 '''
 
 import socket
@@ -34,6 +36,8 @@ class Client:
 client_list = []
 
 #functions
+
+#Description: Accept loop for all new clients connecting to server through server_socket
 def handle_connections(server_socket):
     while True:
         (new_client, nc_address) = server_socket.socket()
@@ -42,7 +46,8 @@ def handle_connections(server_socket):
         new_client_obj = Client(client_name, new_client, nc_address)
         client_list.append(new_client_obj)
         
-
+#Description: Handle protocol exchanges with client
+#Returns: name associated with client
 def handle_prot_ex(client):
     client_name = None
     client.send(protocol_server_init.encode())
@@ -55,6 +60,7 @@ def handle_prot_ex(client):
         client_name = client.recv(NAME_SIZE).decode()
     return client_name
 
+#Description: Initialize the server
 def init_server():  
     #with ensures that the resources are released upon termination 
     #also makes the code cleaner
@@ -78,6 +84,7 @@ def init_server():
             else:
                 client.send(message.encode())
 
+#main function
 def main():
     init_server()   
 
