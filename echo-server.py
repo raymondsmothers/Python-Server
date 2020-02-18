@@ -55,7 +55,7 @@ def handle_prot_ex(client):
         client_name = client.recv(NAME_SIZE).decode()
     return client_name
 
-def init_server:  
+def init_server():  
     #with ensures that the resources are released upon termination 
     #also makes the code cleaner
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket: 
@@ -69,7 +69,7 @@ def init_server:
         client.send(prompt.encode())
 
         #x = threading.Thread(target=thread_function, args=(1,))
-        thread = threading.Thread(target=handle_connection, None)
+        thread = threading.Thread(target=handle_connection, args=server_socket)
 
         while True:
             message = client.recv(MAX_SIZE).decode()
